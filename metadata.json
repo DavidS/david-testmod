@@ -2,9 +2,9 @@
   "name": "david-testmod",
   "version": "1.0.0",
   "author": "David Schmitt",
-  "summary": "A test module.",
+  "summary": "A test module",
   "license": "Apache-2.0",
-  "source": "http://github.com/DavidS/david-testmod",
+  "source": "https://github.com/DavidS/david-testmod",
   "dependencies": [
     {
       "name": "puppetlabs-stdlib",
@@ -43,7 +43,5 @@
       "version_requirement": ">= 4.7.0 < 6.0.0"
     }
   ],
-  "pdk-version": "1.0.0",
-  "template-url": "https://github.com/puppetlabs/pdk-module-template",
-  "template-ref": "heads/master-0-gedd43cb"
+  "pdk-version": "1.0.0"
 }
