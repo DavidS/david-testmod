@@ -23,7 +23,7 @@ environment:
 matrix:
   fast_finish: true
 install:
-  - SET PATH=C:\Ruby%RUBY_VER%\bin:%PATH%
+  - SET PATH=C:\Ruby%RUBY_VER%\bin;%PATH%
   - ruby -v
   - gem -v
   - bundle -v
