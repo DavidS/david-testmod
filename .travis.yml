@@ -1,9 +1,10 @@
 ---
-sudo: false
+sudo: required
 dist: trusty
 language: ruby
 cache: bundler
 before_install:
+  - "wget 'https://pm.puppetlabs.com/cgi-bin/pdk_download.cgi?dist=ubuntu&rel=16.04&arch=amd64&ver=latest' -q -O pdk.deb && sudo dpkg -i pdk.deb && rm pdk.deb"
   - bundle -v
   - rm Gemfile.lock || true
   - gem update --system
