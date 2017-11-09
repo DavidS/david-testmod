@@ -5,29 +5,12 @@ language: ruby
 cache: bundler
 before_install:
   - "wget 'https://pm.puppetlabs.com/cgi-bin/pdk_download.cgi?dist=ubuntu&rel=16.04&arch=amd64&ver=latest' -q -O pdk.deb && sudo dpkg -i pdk.deb && rm pdk.deb"
-  - bundle -v
-  - rm Gemfile.lock || true
-  - gem update --system
-  - gem update bundler
-  - gem --version
-  - bundle -v
 script:
-  - 'bundle exec rake $CHECK'
+  - 'pdk $CHECK'
 bundler_args: --without system_tests
-rvm:
-  - 2.3.1
-  - 2.1.7
 env:
-  - PUPPET_GEM_VERSION="~> 4.0" CHECK=spec
-matrix:
-  fast_finish: true
-  include:
-    -
-      env: CHECK=rubocop
-    -
-      env: CHECK="syntax lint"
-    -
-      env: CHECK=metadata_lint
+  - PUPPET_GEM_VERSION="~> 4.0" CHECK="validate"
+  - PUPPET_GEM_VERSION="~> 4.0" CHECK="test unit"
 branches:
   only:
     - master
